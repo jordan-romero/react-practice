@@ -2,9 +2,9 @@ import React from 'react'
 
 const Person = () => {
     return (
-        <div>
-            
-        </div>
+        <p>
+            I am a person!
+        </p>
     )
 }
 
