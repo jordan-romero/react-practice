@@ -25,9 +25,19 @@ export default class App extends Component {
       <div className="App">
         <h1>Hi Im a React App</h1>
         <button onClick={this.switchNameHandler}>Switch Name</button>
-        <Person name={this.state.persons[0].name} age={this.state.persons[0].age}/>
-        <Person name={this.state.persons[1].name} age={this.state.persons[1].age}/>
-        <Person name={this.state.persons[2].name} age={this.state.persons[2].age}/>
+        <Person 
+          name={this.state.persons[0].name} 
+          age={this.state.persons[0].age}
+        />
+        <Person 
+          name={this.state.persons[1].name} 
+          age={this.state.persons[1].age}
+          onClick={this.switchNameHandler}
+        />
+        <Person 
+          name={this.state.persons[2].name} 
+          age={this.state.persons[2].age}
+        />
       </div>
     )
   }
