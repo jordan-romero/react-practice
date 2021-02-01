@@ -8,7 +8,8 @@ export default class App extends Component {
       { name: 'Max', age: 30 },
       { name: 'Jordan', age: 31 },
       { name: 'Tracie', age: 40 }
-    ]
+    ],
+    showPersons: false, 
   }
 
   switchNameHandler = (newName) => {
@@ -30,7 +31,7 @@ export default class App extends Component {
   }
 
   togglePersonsHandler = () => {
-    
+    this.setState({showPersons: !this.state.showPersons})
   }
 
   render() {
@@ -51,7 +52,8 @@ export default class App extends Component {
           onClick={this.togglePersonsHandler}>
           Switch Name
         </button>
-        <div> 
+        { this.state.showPersons ? 
+          <div > 
           <Person 
             name={this.state.persons[0].name} 
             age={this.state.persons[0].age}
@@ -65,7 +67,7 @@ export default class App extends Component {
             name={this.state.persons[2].name} 
             age={this.state.persons[2].age}
           />
-        </div>
+        </div> : null}
       </div>
     )
   }
