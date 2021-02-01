@@ -31,7 +31,8 @@ export default class App extends Component {
   }
 
   togglePersonsHandler = () => {
-    this.setState({showPersons: !this.state.showPersons})
+    const doesShow = this.state.showPersons
+    this.setState({showPersons: !doesShow})
   }
 
   render() {
