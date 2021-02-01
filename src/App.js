@@ -24,14 +24,14 @@ export default class App extends Component {
       return p.id === id 
     })
 
-    const person = this.state.persons[personIndex]
+    const person = {...this.state.persons[personIndex]}
 
-    this.setState({persons: [
-      { name: 'Meks', age: 29 },
-      { name: event.target.value, age: 31 },
-      { name: 'Tracie', age: 40 }
-    ]
-    })
+    person.name = event.target.value
+
+    const persons = [...this.state.persons]
+    persons[personIndex] = person 
+
+    this.setState({persons: persons})
   }
 
   togglePersonsHandler = () => {
