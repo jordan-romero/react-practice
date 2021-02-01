@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Person from './Person/Person'
+import './App.css'
 
 export default class App extends Component {
 
@@ -67,9 +68,18 @@ export default class App extends Component {
       style.backgroundColor = 'red'
     }
 
+    let classes = []
+    if (this.state.persons.length <= 2) {
+      classes.push('red')
+    }
+    if (this.state.persons.length <= 1) {
+      classes.push('bold')
+    }
+
     return (
       <div className="App">
         <h1>Hi Im a React App</h1>
+        <p className={classes.join(' ')}>This is really working</p>
         <button 
           style={style}
           onClick={this.togglePersonsHandler}>
