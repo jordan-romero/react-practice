@@ -12,14 +12,14 @@ export default class App extends Component {
     showPersons: false, 
   }
 
-  switchNameHandler = (newName) => {
-    this.setState({persons: [
-      { name: newName, age: 29 },
-      { name: 'Jordy', age: 31 },
-      { name: 'Tracie', age: 40 }
-    ]
-    })
-  }
+  // switchNameHandler = (newName) => {
+  //   this.setState({persons: [
+  //     { name: newName, age: 29 },
+  //     { name: 'Jordy', age: 31 },
+  //     { name: 'Tracie', age: 40 }
+  //   ]
+  //   })
+  // }
 
   nameChangedHandler = (event) => {
     this.setState({persons: [
@@ -50,19 +50,9 @@ export default class App extends Component {
     if (this.state.showPersons) {
       persons = (
         <div > 
-          <Person 
-            name={this.state.persons[0].name} 
-            age={this.state.persons[0].age}
-          />
-          <Person 
-            name={this.state.persons[1].name} 
-            age={this.state.persons[1].age}
-            onChange={this.nameChangedHandler}
-          />
-          <Person 
-            name={this.state.persons[2].name} 
-            age={this.state.persons[2].age}
-          />
+          {this.state.persons.map(person => {
+            return <Person {...person}/>
+          })}
         </div> 
       )
     }
