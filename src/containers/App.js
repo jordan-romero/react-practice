@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import Person from '../components/Persons/Person/Person'
-import  classes from './App.css'
+
+import Persons from '../components/Persons/Persons'
+
 // import styled from 'styled-components'
 
 // const StyledButton = styled.button`
@@ -56,47 +57,15 @@ class App extends Component {
 
   render() {
 
-    // const style = {
-    //   backgroundColor: 'green',
-    //   color: 'white',
-    //   font: 'inherit',
-    //   border: '1px solid blue',
-    //   padding: '8px',
-    //   cursor: 'pointer',
-    //   ':hover': {
-    //     backgroundColor: 'lightgreen',
-    //     color: 'black'
-    //   }
-    // }
-
     let persons = null; 
 
     if (this.state.showPersons) {
       persons = (
         <div > 
-          {this.state.persons.map((person, index) => {
-            return <Person {...person} 
-            onClick={() => this.deletePersonHandler(index)} 
-            key={person.id}
-            onChange={(event) => this.nameChangedHandler(event, person.id)}/>
-          })}
+          <Persons />
         </div> 
       )
-
-      // style.backgroundColor = 'red'
-      // style[':hover'] = {
-      //   backgroundColor: 'salmon',
-      //   color: 'black'
-      // }
     }
-
-    // let classes = []
-    // if (this.state.persons.length <= 2) {
-    //   classes.push('red')
-    // }
-    // if (this.state.persons.length <= 1) {
-    //   classes.push('bold')
-    // }
 
     return (
       
