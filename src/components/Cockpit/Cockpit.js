@@ -1,6 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 const Cockpit = (props) => {
+
+    useEffect(() => {
+        console.log('cockpit use effect')
+    })
+
     return (
         <>
             <h1>{props.title}</h1>
