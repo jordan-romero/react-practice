@@ -4,7 +4,10 @@ const Cockpit = (props) => {
 
     useEffect(() => {
         console.log('cockpit use effect')
-    })
+        setTimeout(() => {
+            alert('saved data')
+        }, 1000)
+    }, [props.persons])
 
     return (
         <>
