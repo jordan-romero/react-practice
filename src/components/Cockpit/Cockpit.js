@@ -7,7 +7,11 @@ const Cockpit = (props) => {
         setTimeout(() => {
             alert('saved data')
         }, 1000)
-    }, [props.persons])
+
+        return() => {
+            console.log('clean up cockpit')
+        }
+    }, [])
 
     return (
         <>
