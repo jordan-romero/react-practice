@@ -3,14 +3,20 @@ import Person from './Person/Person'
 
 class Persons extends Component {
 
-  static getDerivedStateFromProps(props, state) {
-    console.log("get derived state from props")
-    return state
-  }
+  // static getDerivedStateFromProps(props, state) {
+  //   console.log("get derived state from props")
+  //   return state
+  // }
 
   shouldComponentUpdate(nextProps, nextState) {
+    console.log('should comp update')
     return true
   }
+
+  componentDidUpdate() {
+    console.log('comp did update')
+  }
+
   render (){
     return this.props.persons.map((person, index) => {
       return <Person {...person} 
