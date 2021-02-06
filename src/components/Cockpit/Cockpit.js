@@ -4,7 +4,8 @@ import classes from './Cockpit.module.css';
 
 const Cockpit = props => {
 
-  const toggleBtnRef = useRef()
+  const toggleBtnRef = useRef(null)
+  
 
   useEffect(() => {
     console.log('[Cockpit.js] useEffect');
@@ -43,7 +44,11 @@ const Cockpit = props => {
     <div className={classes.Cockpit}>
       <h1>{props.title}</h1>
       <p className={assignedClasses.join(' ')}>This is really working!</p>
-      <button className={btnClass} onClick={props.clicked}>
+      <button 
+      className={btnClass} 
+      onClick={props.clicked}
+      ref={toggleBtnRef}
+      >
         Toggle Persons
       </button>
     </div>
