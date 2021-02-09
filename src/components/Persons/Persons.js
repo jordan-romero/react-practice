@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 
 import Person from './Person/Person';
-import AuthContext from '../../context/auth-context'
+
 
 class Persons extends PureComponent {
   // static getDerivedStateFromProps(props, state) {
@@ -55,7 +55,6 @@ class Persons extends PureComponent {
           age={person.age}
           key={person.id}
           changed={event => this.props.changed(event, person.id)}
-          isAuth={this.props.isAuthenticated}
         />
       );
     })
