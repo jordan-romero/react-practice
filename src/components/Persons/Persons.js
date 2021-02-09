@@ -47,8 +47,7 @@ class Persons extends PureComponent {
 
   render() {
     console.log('[Persons.js] rendering...');
-    return <AuthContext.Consumer>
-    {this.props.persons.map((person, index) => {
+    return this.props.persons.map((person, index) => {
       return (
         <Person
           click={() => this.props.clicked(index)}
@@ -59,8 +58,8 @@ class Persons extends PureComponent {
           isAuth={this.props.isAuthenticated}
         />
       );
-    })}
-    </AuthContext.Consumer>
+    })
+    
   }
   
 }
